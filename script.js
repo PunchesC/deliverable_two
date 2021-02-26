@@ -1,9 +1,5 @@
 let pet = prompt("What's pet's name?");
 
-if (pet) {
-  alert(pet + ', ' + 'such a lovely name!');
-}
-
 let energy = 0;
 
 let happiness = 0;
@@ -18,10 +14,13 @@ for (var x = 0; x < 6; x++) {
   } else if (result === 'walk' && energy > 0) {
     happiness += 2;
     energy -= 1;
-  } else {
+  } else if( result === 'walk' && energy <= 0) {
     alert('Not enough energy to enjoy a walk.');
+  } else {
+    alert("You haven't taught " + pet + " that yet!")
   }
 }
+
 
 console.log(pet + " has "  + happiness + " happiness and " + energy + " energy.");
 
